@@ -1,27 +1,69 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title></title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/style.css">
-  </head>
-  <body>
-    <h1>Salmon Cookies!</h1>
-    <nav>
-      <a href="sales.html">Sales</a>
-    </nav>
-    <p><br>Seattle Location<br><br>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title></title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <h1>Salmon Cookies!</h1>
+  <nav>
+    <a href="sales.html">Sales</a>
+  </nav>
+  <p><br>Seattle Location<br><br>
     Tokyo Location<br><br>
     Dubai Location<br><br>
     Paris Location<br><br>
     Lima Location<br><br>
-    </p>
-    <p>Hours Open: 6:00am-7:00pm</p>
-    <p>Contact Information</p>
-    <script src="" async defer></script>
-  </body>
+  </p>
+  <p>Hours Open: 6:00am-7:00pm</p>
+  <p>Contact Information</p>
+
+  <form id="cookieStandForm" onsubmit="addCookieStand(event)">
+    <fieldset>
+      <legend>Cookie Stand Information</legend>
+
+      <!-- Location Input -->
+      <label for="location">Location:</label>
+      <input type="text" id="location" name="location" required><br><br>
+
+      <!-- Hourly Sales Input -->
+      <label for="hourlySales">Hourly Sales:</label>
+      <input type="text" id="hourlySales" name="hourlySales" required><br><br>
+
+      <!-- Submit Button -->
+      <button type="submit">Add Cookie Stand</button>
+    </fieldset>
+  </form>
+
+  <!-- Cookie Stand Table -->
+  <table id="cookieStandTable">
+    <thead>
+      <tr>
+        <th>Location</th>
+        <th>Hours</th>
+        <!-- Add more header columns for each hour here -->
+        <th>Total</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Cookie stand rows will be added here dynamically -->
+    </tbody>
+    <tfoot>
+      <tr id="footerRow">
+        <th>Total</th>
+        <td id="hourlyTotal" colspan="11"></td>
+      </tr>
+    </tfoot>
+  </table>
+
+  <script src="cookie-stand.js"></script> <!-- JavaScript file -->
+</body>
+
 </html>
